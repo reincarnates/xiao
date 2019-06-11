@@ -1,0 +1,36 @@
+<view>
+  {{msg}}
+  <input bindinput='changeVal' ref='changeInput' class='changeInput'></input>
+  {{inputVal}}
+</view>
+
+<button open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber">huoqu</button>
+<button open-type="getUserInfo" bindgetuserinfo="getuserinfo">huoqu2</button>
+
+<view>
+  {{datas}}
+</view>
+
+<view bindtap='viewTap'>
+  点击
+</view>
+
+<view bindtap='changeMsg'>改变</view>
+
+<view wx:for="{{arr}}" wx:key="{{index}}">{{item}}</view>
+
+<template name='demo'>
+  <view>
+    frist: {{fristName}}
+  </view>
+</template>
+
+<template is="demo" data="{{...demo}}"></template>
+
+<view wx:for="{{[1, 2, 3, 4, 5, 6, 7, 8, 9]}}" wx:for-item="i" wx:for-index="index" wx:key="index">
+  <view wx:for="{{[1, 2, 3, 4, 5, 6, 7, 8, 9]}}" wx:for-item="j" wx:for-index="key" wx:key="key">
+    <view wx:if="{{i <= j}}">
+      {{i}} * {{j}} = {{i * j}}
+    </view>
+  </view>
+</view>

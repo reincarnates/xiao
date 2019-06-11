@@ -1,0 +1,36 @@
+{
+  "pages": [
+    "pages/demo/demo",
+    "pages/index/index",
+    "pages/logs/logs"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "小练习",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/demo/demo",
+        "text": "demo",
+        "iconPath": "/images/homeTwo.png",
+        "selectedIconPath": "/images/home.png"
+      },
+      {
+        "pagePath": "pages/index/index",
+        "text": "index",
+        "iconPath": "/images/shopping.png",
+        "selectedIconPath": "/images/shoppingTwo.png"
+      },
+      {
+        "pagePath": "pages/logs/logs",
+        "text": "logs",
+        "iconPath": "/images/Me.png",
+        "selectedIconPath": "/images/MeTwo.png"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json"
+}
