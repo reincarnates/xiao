@@ -2,3 +2,118 @@
   border: 1px solid #eee;
   padding-left: 5px;
 }
+
+.payment{
+  margin: 20px 0;
+}
+
+.returTop{
+  position: fixed;
+  right: 10px;
+  bottom: 10px;
+  width: 50px;
+  height: 50px;
+  font-size: 12px;
+  background-color: #eee;
+  color: #fff;
+  line-height: 50px;
+}
+
+.demoInput{
+  border: 1px solid #eee;
+  padding-left: 5px;
+  margin: 20px 0;
+}
+
+.word{
+  font-size: 24px;
+  font-family: 'SimSun'
+}
+
+page {
+ width: 100%;
+ height: 100%;
+ overflow: hidden;
+}
+  
+#content {
+ background: #333;
+ width: 100%;
+ height: 100%;
+ overflow: hidden;
+}
+  
+a {
+ width: 100%;
+ height: 50px;
+ overflow: hidden;
+}
+  
+/*banner轮播 */
+  
+.swiper-container {
+ margin-top: 23%;
+ position: relative;
+}
+  
+.swiper-container .swiper {
+ height: 600rpx;
+}
+  
+.swiper-container .swiper .img {
+ width: 100%;
+ height: 100%;
+}
+  
+.swiper-container .dots {
+ position: fixed;
+ height: 80px;
+ right: 0rpx;
+ width: 100%;
+ bottom: 0rpx;
+}
+  
+.swiper-container .dots .dot {
+ /* margin: auto 3px; */
+ /* width: 58px !important; */
+ height: 65px !important;
+ /* background: #333; */
+ /* transition: all 0.6s; */
+}
+  
+.swiper-container .dots .dot.active .imgs {
+ width: 100% !important;
+ height: 100%;
+ margin: 0% auto;
+}
+  
+.imgs {
+ width: 85%;
+ display: block;
+ margin: 5% auto;
+ height: 90%;
+}
+  
+.swiper-container .dotes {
+ position: absolute;
+ right: 40rpx;
+ bottom: 20rpx;
+ display: flex;
+ justify-content: center;
+}
+  
+.swiper-container .dotes .dote {
+ margin: 0 10rpx;
+ width: 28rpx;
+ height: 28rpx;
+ background: #fff;
+ border-radius: 50%;
+ transition: all 0.6s;
+ font: 300 18rpx/28rpx "microsoft yahei";
+ text-align: center;
+}
+  
+.swiper-container .dotes .dote.actives {
+ background: #f80;
+ color: #fff;
+}

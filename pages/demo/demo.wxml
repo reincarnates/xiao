@@ -1,3 +1,58 @@
+<view class="section">
+  <view class="section__title">日期选择器</view>
+  <picker mode="date" value="{{date}}" start="2015-09-01" end="2017-09-01" bindchange="bindDateChange">
+    <view class="picker">
+      当前选择: {{date}}
+    </view>
+  </picker>
+</view>
+
+
+
+<!-- <behavior></behavior> -->
+<!-- <view class="custom flex_center" style="padding-top:{{statusBarHeight}}px">
+  <text>demo</text>
+</view>
+<view class="empty_custom" style="padding-top:{{statusBarHeight}}px"></view> -->
+
+<!-- 如果只是展示用户头像昵称，可以使用 <open-data /> 组件 -->
+<!-- <open-data type="userAvatarUrl"></open-data>
+<open-data type="userNickName"></open-data> -->
+<!-- 需要使用 button 来授权登录 -->
+<!-- <button wx:if="{{canIUse}}" open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo">授权登录</button> -->
+<!-- <view wx:else>请升级微信版本</view> -->
+
+<!-- <button type='primary' bindtap='getAddress' data-id='1'>获取地址</button> -->
+
+<!-- <input class='demoInput' cursor-spacing='0' focus='true'></input> -->
+
+<!-- <input type='text' class='demoInput' bindinput='userInput' placeholder='请输入用户名'></input>
+<input password='true' class='demoInput' bindinput='passInput' placeholder='请输入密码'></input> -->
+<!-- <button type='primary' bindtap='login'>登录</button>
+
+<button type='primary' bindtap='getBeacon'>搜索蓝牙</button>
+
+<button type='primary' bindtap='scanCode'>扫描</button>
+
+<button type='primary' bindtap='vibrateShort'>震动</button> -->
+
+<!-- <button type='primary' bindtap='a'>获取步数</button>
+
+<view class='word'>
+  hello word!
+</view> -->
+
+<!-- <scroll-view scroll-y="true">
+  <view wx:for="{{arr2}}" wx:key="{{index}}">
+    {{item}}
+  </view>
+</scroll-view> -->
+
+<!-- <view bindtap='returTop' class='returTop' wx:if='{{floorstatus}}'>返回顶部</view> -->
+
+
+<!-- <button type='primary' class='payment' bindtap='paymentClick'>支付</button>
+
 <view>
   {{msg}}
   <input bindinput='changeVal' ref='changeInput' class='changeInput'></input>
@@ -33,4 +88,28 @@
       {{i}} * {{j}} = {{i * j}}
     </view>
   </view>
+</view> -->
+
+<!-- <view class="section">
+  <view class="section__title">vertical scroll</view>
+  <scroll-view scroll-y style="height: 200px;" bindscrolltoupper="upper" bindscrolltolower="lower" bindscroll="scroll" scroll-into-view="{{toView}}" scroll-top="{{scrollTop}}">
+    <view id="green" class="scroll-view-item bc_green"></view>
+    <view id="red"  class="scroll-view-item bc_red"></view>
+    <view id="yellow" class="scroll-view-item bc_yellow"></view>
+    <view id="blue" class="scroll-view-item bc_blue"></view>
+  </scroll-view>
+
+  <view class="btn-area">
+    <button size="mini" bindtap="tap">click me to scroll into view </button>
+    <button size="mini" bindtap="tapMove">click me to scroll</button>
+  </view>
 </view>
+<view class="section section_gap">
+  <view class="section__title">horizontal scroll</view>
+  <scroll-view class="scroll-view_H" scroll-x style="width: 100%">
+    <view id="green" class="scroll-view-item_H bc_green"></view>
+    <view id="red"  class="scroll-view-item_H bc_red"></view>
+    <view id="yellow" class="scroll-view-item_H bc_yellow"></view>
+    <view id="blue" class="scroll-view-item_H bc_blue"></view>
+  </scroll-view>
+</view> -->

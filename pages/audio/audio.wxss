@@ -1,0 +1,21 @@
+/* pages/audio/audio.wxss */
+
+.rotateImg {
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 50%;
+  position: absolute;
+  right: 10rpx;
+  top: 10rpx;
+  z-index: 999;
+}
+
+.rotateImg image {
+  width: 60rpx;
+  height: 60rpx;
+}
+
+.slide-image{
+  width: 100%;
+  height: 100%;
+}

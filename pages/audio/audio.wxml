@@ -1,0 +1,12 @@
+<view animation="{{animationData}}" class="rotateImg flex-center" bindtap="audio">
+  <image src="../../images/5.png"></image>
+</view>
+
+<swiper class="" autoplay="true" interval="5000" duration="500">
+  <block wx:for="{{picList}}" wx:key="index">
+    <swiper-item>
+      <image src="{{item}}" class="slide-image" mode="aspectFill" bindtap='previewImg' data-previewurl='{{picList}}'
+      data-currenturl='{{item}}'/>
+    </swiper-item>   
+  </block>  
+</swiper>

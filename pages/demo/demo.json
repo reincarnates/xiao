@@ -1,1 +1,7 @@
-{}
+{
+  "enablePullDownRefresh": true,
+  "backgroundColor": "#eee",
+  "usingComponents": {
+    "behavior": "../../components/behavior/behavior"
+  }
+}
