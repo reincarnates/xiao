@@ -11,6 +11,45 @@ Page({
     isPlay: false,
     timer: '',
     n: 0,
+
+    scrollindex: 0,  //当前页面的索引值
+    totalnum: 4,  //总共页面数
+    starty: 0,  //开始的位置x
+    endy: 0, //结束的位置y
+    critical: 80, //触发翻页的临界值
+    margintop: 0,  //滑动下拉距离
+
+    animationMiddleHeaderItem: {},
+  },
+
+  scrollTouchstart: function (e) {
+    let py = e.touches[0].pageY;
+    console.log(py);
+    this.setData({
+      starty: py
+    })
+  },
+  scrollTouchend: function (e) {
+    let py = e.changedTouches[0].pageY;
+    let d = this.data;
+    this.setData({
+      endy: py,
+    })
+    console.log(e.changedTouches[0].pageY, d.starty);
+    if (py - d.starty > d.critical && d.scrollindex > 0) {
+      this.setData({
+        scrollindex: d.scrollindex - 1
+      })
+    } else if (py - d.starty < -(d.critical) && d.scrollindex < this.data.totalnum - 1) {
+      this.setData({
+        scrollindex: d.scrollindex + 1
+      })
+    }
+    this.setData({
+      starty: 0,
+      endy: 0,
+      margintop: 0
+    })
   },
 
   audio: function() {
@@ -61,7 +100,7 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-    
+    this.heart();
   },
 
   /**
@@ -96,6 +135,47 @@ Page({
 
   endSetInter: function() {
     clearInterval(this.data.timer);
+  },
+
+  heart: function() {
+    var circleCount = 0;
+    // 心跳的外框动画
+    this.animationMiddleHeaderItem = wx.createAnimation({
+      duration: 1000,    // 以毫秒为单位
+      /**
+     * http://cubic-bezier.com/#0,0,.58,1  
+     *  linear  动画一直较为均匀
+     *  ease    从匀速到加速在到匀速
+     *  ease-in 缓慢到匀速
+     *  ease-in-out 从缓慢到匀速再到缓慢
+     * 
+     *  http://www.tuicool.com/articles/neqMVr
+     *  step-start 动画一开始就跳到 100% 直到动画持续时间结束 一闪而过
+     *  step-end   保持 0% 的样式直到动画持续时间结束        一闪而过
+     */
+      timingFunction: 'linear',
+      delay: 100,
+      transformOrigin: '50% 50%',
+      success: function (res) {
+      }
+    });
+
+    setInterval(function () {
+      if (circleCount % 2 == 0) {
+        this.animationMiddleHeaderItem.scale(1.2).step();
+      } else {
+        this.animationMiddleHeaderItem.scale(1.0).step();
+      }
+
+      this.setData({
+        animationMiddleHeaderItem: this.animationMiddleHeaderItem.export()
+      });
+
+      circleCount++;
+      if (circleCount == 1000) {
+        circleCount = 0;
+      }
+    }.bind(this), 1000);
   },
 
   /**

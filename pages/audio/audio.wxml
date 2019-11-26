@@ -1,12 +1,50 @@
 <view animation="{{animationData}}" class="rotateImg flex-center" bindtap="audio">
-  <image src="../../images/5.png"></image>
+  <image src="../../images/7.png"></image>
 </view>
 
-<swiper class="" autoplay="true" interval="5000" duration="500">
-  <block wx:for="{{picList}}" wx:key="index">
-    <swiper-item>
-      <image src="{{item}}" class="slide-image" mode="aspectFill" bindtap='previewImg' data-previewurl='{{picList}}'
-      data-currenturl='{{item}}'/>
-    </swiper-item>   
-  </block>  
-</swiper>
+
+
+<view class="swiper-cont container-fill"> 
+  <view class="scroll-fullpage" bindtouchstart="scrollTouchstart" bindtouchend="scrollTouchend" style="transform:translateY(-{{scrollindex*100}}%);margin-top: {{margintop}}px"> 
+  <!-- 第一页 -->
+    <view class="section section01 {{scrollindex==0?'active':''}}"> 
+      <view class='cont'>
+        <view class='cont-body'>
+          <swiper class="" autoplay="true" interval="5000" duration="500" circular="true">
+            <block wx:for="{{picList}}" wx:key="index">
+              <swiper-item>
+                <image src="{{item}}" class="slide-image" mode="aspectFill" bindtap='previewImg' data-previewurl='{{picList}}'
+                data-currenturl='{{item}}'/>
+              </swiper-item>   
+            </block>  
+          </swiper>
+          <image src="../../images/Me.png" class="beat" animation="{{animationMiddleHeaderItem}}"></image>
+        </view>
+      </view>
+    </view> 
+  <!-- 第二页 -->
+    <view class="section section02 {{scrollindex==1?'active':''}}" style='background:pink'> 
+      <view class='cont'>
+        <view class='cont-body'>
+          <view>two</view>
+        </view>
+      </view>
+    </view> 
+  <!-- 第三页 -->
+    <view class="section section03 {{scrollindex==2?'active':''}}" style='background:blue'>  
+      <view class='cont'>
+        <view class='cont-body'>
+          <view>three</view>
+        </view>
+      </view>
+    </view>
+  <!-- 第四页 -->
+    <view class="section section04 {{scrollindex==3?'active':''}}" style='background:green'> 
+      <view class='cont'>
+        <view class='cont-body'>
+          <view>foure</view>
+        </view>
+      </view>
+    </view>
+  </view> 
+</view>
